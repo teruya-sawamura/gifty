@@ -1,15 +1,569 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/*共通*/
+
+.common_design{
+    background-color: #FAFAFA;
+    color: #565656;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 90px 0 50px 0;
+}
+
+
+/*ナビバー*/
+
+.navbar-brand {
+    font-family: "Candara";
+    font-size: 30px;
+}
+
+.mb-0{
+    border-bottom-style: solid;
+    border-color: #DBDBDB;
+    border-bottom-width: 1px;
+    margin:0;
+    padding:0 10% 0 10%;
+    background-color: #ffffff;
+}
+
+.logged-in a {
+    color: #565656;
+}
+
+.logged-in svg {
+    font-size: 25px;
+    margin-left: 18px;
+    transition: all 0.6s ease 0s;
+    border-radius: 50%;
+}
+
+.logged-in svg:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+
+
+/*トップページ*/
+
+.no-gutters {
+    margin:0;
+    padding:0;
+}
+ 
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    margin:0;
+    padding:0;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.container-fluid h1 {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    font-size: 500%;
+}
+
+.container-fluid p {
+    position: absolute;
+    top: 55%;
+    left: 80%;
+}
+
+
+/*投稿一覧*/
+
+.index-title {
+    margin: 10px auto;
+    width: 935px;
+    font-size: 30px;
+}
+
+.index-title form {
+    display: inline;
+    float: right;
+}
+
+
+
+
+
+/*ログイン・新規ユーザ登録*/
+
+.enter-body {
+    border-style: solid;
+    border-color: #DBDBDB;
+    border-width: 1px;
+    margin: 30px auto;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px 50px;
+}
+
+.enter-title {
+    text-align: center;
+    font-family: "Candara";
+    padding-bottom: 20px;
+}
+
+.enter-message {
+    font-size: 12px;
+}
+
+
+/*プロフィール編集*/
+
+.edit-body {
+    border-style: solid;
+    border-color: #DBDBDB;
+    border-width: 1px;
+    max-width: 700px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 30px 30px 60px 30px;
+}
+
+.edit-title {
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-family: "Candara";
+    font-size: 30px;
+}
+
+.edit-form {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.edit-btn {
+    margin-left: 70px;
+    float: left;
+}
+
+.edit-form p {
+    display: inline;
+    float: right;
+    margin-right: 40px;
+}
+
+
+/*パスワード変更*/
+.edit-pass-form {
+    margin: 0 auto 10px auto;
+}
+
+.edit-pass-title {
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-family: "Candara";
+    font-size: 20px;
+}
+
+
+/*user#show___プロフィール*/
+
+.profile-container{
+    max-width: 750px;
+    margin: 30px auto;
+}
+
+.user-icon {
+    display: inline;
+    margin-left: 10%; 
+}
+
+.user-icon img {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-content {
+    margin: 20px auto 5px 30px;
+    text-align: left;
+    width: 400px;
+}
+
+.user-content h2 {
+    display: inline;
+}
+
+.user-content svg {
+    width: 30px;
+    height: 30px;
+}
+
+.user-content span {
+    float: right;
+}
+
+/*.user-content a {*/
+/*    text-align: right;    */
+/*    font-size: 30px;*/
+/*    color: #565656;*/
+/*    margin-left: 5px;*/
+/*}*/
+
+.user-edit-icon a {
+    text-align: right;    
+    font-size: 30px;
+    color: #565656;
+    margin-left: 5px;
+}
+
+.user-edit-icon {
+    transition: all 0.6s ease 0s;
+    border-radius: 50%;
+}
+
+.user-edit-icon svg:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+
+.user-content p {
+    padding: 10px 0;
+}
+
+
+/*user#show___投稿一覧*/
+
+.posts-container {
+    display: block;
+    margin: 10px auto 50px auto;
+    width: 935px;
+    float: left;
+}
+
+.user-show {
+    border-top-style: solid;
+    border-color: #DBDBDB;
+    border-top-width: 1px; 
+}
+
+.like-show {
+    border-top-style: solid;
+    border-color: #DBDBDB;
+    border-top-width: 1px; 
+}
+
+.posts-tab {
+    text-align: center;
+}
+
+.mypage-active {
+    display: inline-block;
+    width: 230px;
+    padding: 10px 20px 20px 20px;
+    font-size: 15px;
+    border-top-style: solid;
+    border-color: #565656;
+    border-top-width: 1px;
+    margin-bottom: 0;
+}
+
+.mypage-noactive {
+    display: inline-block;
+    width: 230px;
+    padding: 10px 20px 20px 20px;
+    font-size: 15px;
+}
+
+.mypage-noactive a {
+    color: #a8a8a8;
+    text-decoration: none;
+}
+
+.mypage-noactive a:hover {
+    color: #c8c8c8;
+}
+
+.posts {
+    text-align: center;
+}
+
+
+/*_post_パーシャル*/
+
+.row-0 {
+    margin: 0;
+}
+
+.thumbnail-link {
+    max-width: 181px;
+    max-height: 240px;
+}
+
+.gift-thumbnail {
+    position: relative;
+    display: inline-block;
+    max-width: 181px;
+    max-height: 240px;
+    float: left;
+    margin: 3px;
+}
+
+.gift-thumbnail img {
+    width: 181px;
+    height: 181px;
+    object-fit: cover;
+}
+
+.gift-thumbnail a {
+    color: #fafafa;
+    font-family: "Candara";
+    font-size: 18px;
+}
+
+.gift-thumbnail .caption {
+    font-size: 130%;
+    text-align: center;
+    padding-top: 80px;
+    color: #fafafa;
+}
+
+.caption p {
+    font-size: 12px;
+}
+
+.gift-thumbnail .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.4);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.gift-thumbnail:hover .mask {
+    opacity: 1;
+}
+
+.post-content {
+    /*display: inline-block;*/
+    height: 0px;
+    /*width: 150px;*/
+    /*margin: 20px 20px;*/
+    /*font-size: 15px;*/
+}
+
+
+.active {
+    background-color: #a8a8a8;
+}
+
+.pagination a {
+    color: #565656;
+    
+    /*background-color: #a8a8a8;*/
+}
+
+.pagepage {
+    margin: 0 auto;
+}
+
+/*いいね/いいね解除ボタン*/
+
+
+.fav-btn {
+    /*float: right;*/
+    position: absolute;
+    top: 148px;
+    left: 145px;
+    background-color: #ffffff;
+    border-radius: 80%;
+}
+
+
+.fav-btn:hover {
+    background-color: #d8d8d8 ;
+}
+
+.fav-count {
+    display: inline;
+    color: #565656;
+    font-size: 8px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+
+/*新規GIFT*/
+
+.giftpost-body {
+    border-style: solid;
+    border-color: #DBDBDB;
+    border-width: 1px;
+    max-width: 700px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 30px 30px 60px 30px;
+}
+
+.giftpost-title {
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-family: "Candara";
+    font-size: 30px;
+}
+
+.giftpost-form {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+
+/*投稿詳細*/
+
+.carousel-inner {
+    max-height: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    /*position: relative;*/
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+/*.carousel-item img > .carousel-control-prev {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*}*/
+
+/*.carousel-control-next {*/
+/*    right: 400px;*/
+/*    position: absolute;*/
+/*}*/
+
+.slider {
+    /*position: absolute;*/
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.slider a {
+    font-size: 30px;
+}
+
+.carousel-container {
+    display: table;
+    border-collapse: separate; 
+    border-spacing: 5px 0;
+    border-color: #ffffff;
+    margin: 40px auto;
+}
+
+.carousel-wrapper {
+    display: table-cell;
+    padding-bottom: 0;
+}
+
+.carousel-content {
+    display: table-cell;
+    vertical-align: top;
+    height: 0px;
+    width: 300px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.carousel-username {
+    border-bottom-style: solid;
+    border-color: #fafafa;
+    border-bottom-width: 3px; 
+    padding: 5px 0 10px 15px;
+    font-size: 30px;
+}
+
+.carousel-username p {
+    display: inline;
+}
+
+.carousel-username a {
+    color: #565656;
+}
+
+.carousel-username img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    object-fit: cover;
+    display: inline;
+}
+
+.carousel-post {
+    padding: 18px 15px 5px 15px;
+    font-size: 13px;
+}
+
+.carousel-post span {
+    /*font-size: 15px;*/
+    font-weight: 600;
+    font-family: "Meiryo UI";
+}
+
+.fav-btn2 {
+    /*position: absolute;*/
+    /*top: 148px;*/
+    /*left: 145px;*/
+    background-color: #ffffff;
+    font-size: 25px;
+    transition: all 0.6s ease 0s;
+    border-radius: 50%;
+}
+
+.fav-btn2 svg:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+.fav-comment {
+    margin-left: 10px;
+}
+
+.post-comment {
+    padding: 20px 11px 11px 11px;
+}
+
+.post-comment p {
+    margin-top: 25px;
+}
+
+.post-edit-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    transition: all 0.6s ease 0s;
+    border-radius: 50%;
+}
+
+.post-edit-icon a {
+    font-size: 30px;
+    color: #565656;
+}
+
+.post-edit-icon svg:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}

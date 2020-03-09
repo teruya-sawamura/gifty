@@ -1,0 +1,28 @@
+<div class="row row-0">
+  <div class="index-title">
+    <span>検索結果</span>
+    <span>
+      <%= form_tag ('/posts/search'), :method => 'get', class: "form-inline my-2 my-lg-0" do %>
+        <%= text_field_tag :search, '', class: "form-control mr-sm-2", :placeholder => "search" %>
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="secondary"><i class="fas fa-search"></i></button>
+      <% end %>
+    </span>
+
+    <!--<span>-->
+    <!--  <p>検索</p>-->
+    <!--    <%#= form_tag(search_topppages_path,:method => 'get') do %>-->
+    <!--      <%#= text_field_tag :search %>-->
+    <!--      <%#= submit_tag 'Search', :name => nil %>-->
+    <!--    <%# end %>-->
+    <!--</span>-->
+  </div>
+  <div class="posts-container index-posts">
+    <div class="posts">
+      <%= render 'posts/posts', posts:@posts, post:@post %>
+    </div>
+  </div>
+</div>
+  
+<div class="pagepage">
+  <%= paginate @posts %>
+</div>

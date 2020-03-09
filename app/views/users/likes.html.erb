@@ -1,0 +1,45 @@
+<div class="text-center">
+
+<!--プロフィールコンテンツ-->
+  <div class="profile-container">
+    <div class="media">
+      <div class="user-icon img mr-3">
+        <% if @user.icon.file.nil? %>
+          <%= image_tag 'default_user.jpg' %>
+        <% else %>
+          <%= image_tag @user.icon.to_s %>
+        <% end %>
+      </div>
+      <div class="user-content">
+        <h2><%= @user.name %>&nbsp;&nbsp;</h2><i class="fas fa-<%= @user.sex %> fa-lg"></i>&nbsp;&nbsp;
+          <span class="user-edit-icon">  
+            <% if current_user == @user %>
+              <%= link_to edit_user_path do %><i class="fas fa-user-edit"></i><% end %>
+              <%= link_to new_post_path do %><i class="fas fa-gift"></i><% end %>
+            <% end %>
+          </span>
+        <div class="user-introduction">
+          <p><%= @user.introduction %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--投稿一覧表示-->
+  <div class="row row-0">  
+    <div class="posts-container like-show">
+      <div class="mypage-noactive">
+        <%= link_to 'MyGIFT一覧', user_path %>&nbsp;&nbsp;<span class="badge badge-secondary"><%= @count_posts %></span>
+      </div>
+      <p class="mypage-active">いいねした投稿一覧&nbsp;&nbsp;<span class="badge badge-secondary"><%= @count_likes %></span></p>
+      <div class="posts">  
+        <%= render 'posts/posts', posts:@likes %>
+      </div>
+    </div>
+  </div>
+  <div class="pagepage">
+    <%= paginate @likes %>
+  </div>
+</div>
+

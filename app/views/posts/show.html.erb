@@ -1,0 +1,81 @@
+
+<!--投稿コンテナ -->
+<table class="carousel-container">
+
+  <!--画像-->
+  <td class="carousel-wrapper">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000000">
+      <!-- インジケータの設定 -->
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <!-- スライドさせる画像の設定 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag @post.giftpict1.to_s, class:"d-block w-100" %>
+        </div><!-- /.carousel-item -->
+        <div class="carousel-item">
+          <% if @post.giftpict2.file.nil? %>
+            <%= image_tag 'default_giftpict.png' %>
+          <% else %>
+            <%= image_tag @post.giftpict2.to_s, class:"d-block w-100" %>
+          <% end %>
+        </div><!-- /.carousel-item -->
+        <div class="carousel-item">
+          <% if @post.giftpict3.file.nil? %>
+            <%= image_tag 'default_giftpict.png' %>
+          <% else %>
+            <%= image_tag @post.giftpict3.to_s, class:"d-block w-100" %>
+          <% end %>
+        </div><!-- /.carousel-item -->
+         <!-- スライドコントロールの設定 -->
+        <div class="slider">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            >
+          </a>
+        </div>
+      </div><!-- /.carousel-inner -->
+    </div><!-- /.carousel --> 
+  </td>
+
+  <!--投稿内容-->
+  <td class="carousel-content">
+    <div class="carousel-username">
+      <% if @user.icon.file.nil? %>
+        <%= image_tag 'default_user.jpg' %>
+      <% else %>
+        <%= image_tag @user.icon.to_s %>
+      <% end %>
+      <p><%= link_to @user do %><%= @post.user.name %><% end %></p>
+    </div>
+    <div class="carousel-post">
+      <div>
+        <div><%= render "favorites/favorite_button2", post: @post %><span class="fav-comment"><%= @post.liked.count %>人&nbsp;がいいね！しました</span></div>
+      </div>
+    <div class="post-comment">
+      <div><span><%= @post.giftwhat %></span>&nbsp;を</div>
+      <div><span><%= @post.giftwhen %></span>&nbsp;に、&nbsp;<span><%= @post.giftwho %></span>
+        <% if @post.givetake == 'あげました' %>
+          &nbsp;に
+        <% else %>
+          &nbsp;から
+        <% end %>
+      </div>
+      <div><span><%= @post.givetake %>&nbsp;！</span></div>
+      <p><%= @post.giftcomment %></p>
+    </div>
+
+    <!--編集・削除ボタン-->
+    <% if current_user == @post.user %>
+    <span class="post-edit-icon">
+      <%= link_to edit_post_path do %><i class="fas fa-edit"></i><% end %>&nbsp;&nbsp;
+      <%= link_to @post, method: :delete, data: { confirm: "削除しますか?" } do %><i class="fas fa-trash"></i><% end %>
+    </span>
+    <% end %>
+  </td>
+</table>

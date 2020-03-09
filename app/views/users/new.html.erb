@@ -1,0 +1,19 @@
+<div class="enter-body">
+  <h3 class="enter-title">GIFTY!</h3>
+    <%= form_with(model: @user, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, class: 'form-control', placeholder: 'アカウント名' %>
+      </div>
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレス' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワード確認' %>
+      </div>
+      <%= f.submit 'アカウント登録', class: 'btn btn-primary btn-block' %>
+    <% end %>
+    <p class="enter-message"><%= link_to 'すでにアカウントをお持ちの方はこちら', login_path %></p>
+</div>

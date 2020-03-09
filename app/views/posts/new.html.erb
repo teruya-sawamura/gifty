@@ -1,0 +1,41 @@
+<div class="giftpost-body">
+  <h3 class="giftpost-title">新規GIFT</h3>
+  <div class="giftpost-form">
+    <%= form_with(model: @post, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="form-group form-inline">
+        <%= f.label :giftwhat, 'なにを', class: "col-sm-4 control-label" %>
+        <%= f.text_field :giftwhat, class: 'col-sm-8 form-control' %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftwhen, "いつ", class: "col-sm-4 control-label" %>
+        <%= f.select :giftwhen, [["誕生日", "誕生日"], ["クリスマス", "クリスマス"], ["成人祝い", "成人祝い"], ["バレンタイン", "バレンタイン"], ["ホワイトデー", "ホワイトデー"], ["退職祝い", "退職祝い"], ["入社祝い", "入社祝い"], ["内定祝い", "内定祝い"], ["転職祝い", "転職祝い"], ["入学祝い", "入学祝い"], ["卒業祝い", "卒業祝い"], ["結婚祝い", "結婚祝い"], ["引越祝い", "引越祝い"], ["その他", "その他"]], {include_blank: '選んでください'}, class: "col-sm-8 form-control" %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftwho, "だれ", class: "col-sm-4 control-label" %>
+        <%= f.select :giftwho, [["夫", "夫"], ["妻", "妻"], ["彼氏", "彼氏"], ["彼女", "彼女"], ["友人", "友人"], ["家族", "家族"], ["同僚", "同僚"], ["先輩", "先輩"], ["後輩", "後輩"], ["上司", "上司"], ["その他", "その他"]], {include_blank: '選んでください'}, class: "col-sm-8 form-control" %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :givetake, "あげた or もらった", class: "col-sm-4 control-label" %>
+        <%= f.select :givetake, [["あげた", "あげました"], ["もらった", "もらいました"]], {include_blank: '選んでください'}, class: "col-sm-8 form-control" %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftpict1, '画像1', class: "col-sm-4 control-label" %>
+        <%= f.file_field :giftpict1, class: 'col-sm-8 form-control-file' %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftpict2, '画像2', class: "col-sm-4 control-label" %>
+        <%= f.file_field :giftpict2, class: 'col-sm-8 form-control-file' %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftpict3, '画像3', class: "col-sm-4 control-label" %>
+        <%= f.file_field :giftpict3, class: 'col-sm-8 form-control-file' %>
+      </div>
+      <div class="form-group form-inline">
+        <%= f.label :giftcomment, 'コメント', class: "col-sm-4 control-label" %>
+        <%= f.text_area :giftcomment, class: 'col-sm-8 form-control', rows: 3 %>
+      </div>
+      <%= f.submit '投稿する', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="enter-body">
+
+
+<div class="row row-0">
+  <div class="edit-pass-title">パスワード変更</div>
+  <div class="edit-pass-form">
+    <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+          
+          <div class="form-group">
+            <%= f.label :password, '新しいパスワード' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :password_confirmation, '新しいパスワード確認' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+          
+
+        <%= f.submit 'edit', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<% if current_user.liking?(post) %>
+	<!--お気に入り解除ボタン-->
+  <%= form_with(model: current_user.favorites.find_by(post_id: post.id), local: true, method: :delete, class: "d-inline fav-btn") do |f| %>
+    <%= hidden_field_tag :post_id, post.id %>
+      <%= f.button :type => "submit", style: 'border-style: none; color: #CC6666; background-color: transparent;' do %>
+      <i class="fas fa-heart"></i><p class="fav-count"><%= post.liked.count %></p>
+    <% end %>
+  <% end %>
+<% else %>
+	<!--お気に入りボタン-->
+  <%= form_with(model: current_user.favorites.build, local: true, class: "d-inline fav-btn") do |f| %>
+    <%= hidden_field_tag :post_id, post.id %>
+      <%= f.button :type => "submit", style: 'border-style: none; color: #CC6666; background-color: transparent;' do %>
+      <i class="far fa-heart"></i><p class="fav-count"><%= post.liked.count %></p>
+    <% end %>
+  <% end %>
+<% end %>

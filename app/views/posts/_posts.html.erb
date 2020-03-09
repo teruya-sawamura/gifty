@@ -1,0 +1,21 @@
+<% posts.each do |post| %>
+    <div class="gift-thumbnail">
+      <%= image_tag post.giftpict1.to_s %>
+      <%= link_to post do %>
+        <div class="mask">
+          <div class="caption">
+            <!--<P><%#= link_to  post.user.name, user_path(post.user) %></P>-->
+            <P>by  <%= post.user.name %></p>
+            <% if post.givetake == "あげた" %>
+              <P class="post-content">for <%= post.giftwho %></P>
+            <% else %>
+              <p class="post-content">from <%= post.giftwho %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <%= render "favorites/favorite_button", post: post %>
+      
+    </div>
+<% end %>
+
