@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.all.order(id: :desc).page(params[:page]).per(20)
+    @posts = @user.posts.all.order(id: :desc).page(params[:page]).per(18)
     count(@user)
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @likes = @user.likes.all.order(id: :desc).page(params[:page]).per(20)
+    @likes = @user.likes.all.order(id: :desc).page(params[:page]).per(18)
     count(@user)
   end
   

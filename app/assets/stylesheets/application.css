@@ -5,8 +5,12 @@
     color: #565656;
     max-width: 100%;
     max-height: 100%;
-    padding: 90px 0 50px 0;
+    min-width: 100%;
+    min-height: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
+
 
 
 /*ナビバー*/
@@ -20,13 +24,14 @@
     border-bottom-style: solid;
     border-color: #DBDBDB;
     border-bottom-width: 1px;
-    margin:0;
-    padding:0 10% 0 10%;
+    /*margin:0;*/
+    /*padding:0 10% 0 10%;*/
     background-color: #ffffff;
 }
 
 .logged-in a {
     color: #565656;
+    display: inline;
 }
 
 .logged-in svg {
@@ -41,6 +46,34 @@
     transform: scale(1.1, 1.1);
 }
 
+.unlogged-in a {
+    color: #565656;
+    display: inline;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/*_post_btn*/
+
+.post-btn {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    transition:1s;
+    z-index: 100;
+}
+
+.post-btn:hover{
+    opacity:1;
+}
+
+.post-btn img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  140px;       /* ※縦横を同値に */
+    height: 140px;       /* ※縦横を同値に */
+}
 
 
 /*トップページ*/
@@ -80,16 +113,22 @@
 
 /*投稿一覧*/
 
+.row-index {
+    min-width: 585px;
+/*    margin: 0 auto;*/
+/*    max-width: 935px;*/
+}
+
 .index-title {
-    margin: 10px auto;
-    width: 935px;
+    /*margin: 10px auto;*/
+    /*width: 935px;*/
     font-size: 30px;
 }
 
-.index-title form {
-    display: inline;
-    float: right;
-}
+/*.index-title form {*/
+/*    display: inline;*/
+/*    float: space-around;*/
+/*}*/
 
 
 
@@ -101,7 +140,7 @@
     border-style: solid;
     border-color: #DBDBDB;
     border-width: 1px;
-    margin: 30px auto;
+    margin: 3% auto;
     max-width: 400px;
     background-color: #ffffff;
     padding: 30px 50px;
@@ -126,13 +165,13 @@
     border-width: 1px;
     max-width: 700px;
     background-color: #ffffff;
-    margin: 30px auto;
+    margin: 3% auto;
     padding: 30px 30px 60px 30px;
 }
 
 .edit-title {
     text-align: center;
-    margin: 20px 0 30px 0;
+    margin: 3% 0 5% 0;
     font-family: "Candara";
     font-size: 30px;
 }
@@ -150,7 +189,6 @@
 .edit-form p {
     display: inline;
     float: right;
-    margin-right: 40px;
 }
 
 
@@ -171,12 +209,14 @@
 
 .profile-container{
     max-width: 750px;
+    min-width: 550px;
     margin: 30px auto;
+    justify-content: center;
 }
 
 .user-icon {
     display: inline;
-    margin-left: 10%; 
+    margin: 0 auto; 
 }
 
 .user-icon img {
@@ -189,9 +229,10 @@
 }
 
 .user-content {
-    margin: 20px auto 5px 30px;
+    min-width: 400px;
+    margin: 20px auto;
     text-align: left;
-    width: 400px;
+    max-width: 600px;
 }
 
 .user-content h2 {
@@ -241,9 +282,10 @@
 
 .posts-container {
     display: block;
-    margin: 10px auto 50px auto;
-    width: 935px;
-    float: left;
+    margin: 10px auto 0 auto;
+    width: 985px;
+    min-width: 590px;
+    text-align: left;
 }
 
 .user-show {
@@ -290,7 +332,7 @@
 }
 
 .posts {
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -300,23 +342,17 @@
     margin: 0;
 }
 
-.thumbnail-link {
-    max-width: 181px;
-    max-height: 240px;
-}
-
 .gift-thumbnail {
     position: relative;
     display: inline-block;
-    max-width: 181px;
-    max-height: 240px;
-    float: left;
-    margin: 3px;
+    max-width: 175px;
+    max-height: 175px;
+    margin: 4px 0px 4px 6px;
 }
 
 .gift-thumbnail img {
-    width: 181px;
-    height: 181px;
+    width: 175px;
+    height: 175px;
     object-fit: cover;
 }
 
@@ -410,13 +446,13 @@
     border-width: 1px;
     max-width: 700px;
     background-color: #ffffff;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 30px 30px 60px 30px;
 }
 
 .giftpost-title {
     text-align: center;
-    margin: 20px 0 30px 0;
+    margin: 3% 0 5% 0;
     font-family: "Candara";
     font-size: 30px;
 }
@@ -469,7 +505,13 @@
     border-collapse: separate; 
     border-spacing: 5px 0;
     border-color: #ffffff;
-    margin: 40px auto;
+    margin: 3% auto;
+    text-align: center;
+}
+
+.carousel-container tr {
+    display: inline-table;
+    text-align: left;
 }
 
 .carousel-wrapper {
@@ -485,6 +527,10 @@
     background-color: #ffffff;
     position: relative;
 }
+
+/*.carousel-content-tr{*/
+/*    padding: 0;*/
+/*}*/
 
 .carousel-username {
     border-bottom-style: solid;
@@ -552,7 +598,7 @@
 
 .post-edit-icon {
     position: absolute;
-    right: 10px;
+    left: 10px;
     bottom: 5px;
     transition: all 0.6s ease 0s;
     border-radius: 50%;

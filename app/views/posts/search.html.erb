@@ -1,28 +1,25 @@
-<div class="row row-0">
-  <div class="index-title">
-    <span>検索結果</span>
-    <span>
-      <%= form_tag ('/posts/search'), :method => 'get', class: "form-inline my-2 my-lg-0" do %>
-        <%= text_field_tag :search, '', class: "form-control mr-sm-2", :placeholder => "search" %>
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="secondary"><i class="fas fa-search"></i></button>
-      <% end %>
-    </span>
-
-    <!--<span>-->
-    <!--  <p>検索</p>-->
-    <!--    <%#= form_tag(search_topppages_path,:method => 'get') do %>-->
-    <!--      <%#= text_field_tag :search %>-->
-    <!--      <%#= submit_tag 'Search', :name => nil %>-->
-    <!--    <%# end %>-->
-    <!--</span>-->
+<div class="container">
+  <div class="row row-index">
+    <!--<div class="index-title">-->
+      <div class="col-md-8" style="font-size: 30px;">検索結果</div>
+      <div class="col-md-4">
+        <%= form_tag ('/posts/search'), :method => 'get', class: "form-inline my-2 my-lg-0 flex-nowrap" do %>
+          <%= text_field_tag :search, '', class: "form-control mr-sm-0", :placeholder => "search" %>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="secondary"><i class="fas fa-search"></i></button>
+        <% end %>
+      </div>
+    <!--</div>-->
   </div>
-  <div class="posts-container index-posts">
-    <div class="posts">
-      <%= render 'posts/posts', posts:@posts, post:@post %>
+  
+  <div class="row row-2">
+    <div class="posts-container col-lg-12 col-md-9">
+        <%= render 'posts/posts', posts:@posts, post:@post %>
     </div>
   </div>
-</div>
   
-<div class="pagepage">
-  <%= paginate @posts %>
+  <div class="pagepage">
+    <%= paginate @posts %>
+  </div>
 </div>
+
+<%= render 'layouts/post_btn' %>

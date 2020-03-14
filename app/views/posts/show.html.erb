@@ -1,8 +1,11 @@
 
 <!--投稿コンテナ -->
-<table class="carousel-container">
+<div class="container" style="padding: 0;">
+
+<table class="row carousel-container">
 
   <!--画像-->
+  <tr class="col-sm-6" style="padding: 0;">
   <td class="carousel-wrapper">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000000">
       <!-- インジケータの設定 -->
@@ -42,8 +45,10 @@
       </div><!-- /.carousel-inner -->
     </div><!-- /.carousel --> 
   </td>
+  </tr>
 
   <!--投稿内容-->
+  <tr class="col-sm-5" style="padding: 0; height:400px;">
   <td class="carousel-content">
     <div class="carousel-username">
       <% if @user.icon.file.nil? %>
@@ -78,4 +83,9 @@
     </span>
     <% end %>
   </td>
+  </tr>
 </table>
+
+</div>
+
+<%= render 'layouts/post_btn' %>
