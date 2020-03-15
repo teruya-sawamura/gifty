@@ -1,11 +1,10 @@
-
 <!--プロフィールコンテンツ-->
 <div class="container">
 
   <div class="row profile-container">
     <div class="media">
       
-      <div class="user-icon img mr-3">
+      <div class="user-icon img mr-3 col-xs-2">
         <% if @user.icon.file.nil? %>
           <%= image_tag 'default_user.jpg' %>
         <% else %>
@@ -15,12 +14,10 @@
       
       <div class="user-content">
         <h2><%= @user.name %>&nbsp;&nbsp;</h2><i class="fas fa-<%= @user.sex %> fa-lg"></i>&nbsp;&nbsp;
-          <span class="user-edit-icon">  
             <% if current_user == @user %>
-              <%= link_to edit_user_path do %><i class="fas fa-user-edit"></i><% end %>
+                <%= link_to "プロフィール編集", edit_user_path, class: 'btn btn-outline-secondary btn-sm' %>
               <!--<%= link_to new_post_path do %><i class="fas fa-gift"></i><% end %>-->
             <% end %>
-          </span>
         <div class="user-introduction">
           <p><%= @user.introduction %></p>
         </div>
@@ -32,18 +29,18 @@
 
 <!--投稿一覧表示-->
   <div class="row">  
-    <div class="posts-container like-show">
+    <div class="posts-container like-show col-xs-12">
       <div class="posts-tab">
         <div class="mypage-noactive">
           <%= link_to 'MyGIFT一覧', user_path %>&nbsp;&nbsp;<span class="badge badge-secondary"><%= @count_posts %></span>
         </div>
-        <p class="mypage-active">いいねした投稿一覧&nbsp;&nbsp;<span class="badge badge-secondary"><%= @count_likes %></span></p>
+        <div class="mypage-active">いいね一覧&nbsp;&nbsp;<span class="badge badge-secondary"><%= @count_likes %></span></div>
       </div>
     </div>
   </div>
   
   <div class="row row-2">
-    <div class="posts-container col-lg-12 col-md-9">  
+    <div class="posts-container col-xs-12">  
        <%= render 'posts/posts', posts:@likes %>
     </div>
   </div>
@@ -51,9 +48,8 @@
   <div class="pagepage">
     <%= paginate @likes %>
   </div>
-  
-</div>
-
 
 
 <%= render 'layouts/post_btn' %>
+
+</div>

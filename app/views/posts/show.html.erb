@@ -2,10 +2,10 @@
 <!--投稿コンテナ -->
 <div class="container" style="padding: 0;">
 
-<table class="row carousel-container">
+<table class="row carousel-container col-xs-12">
 
   <!--画像-->
-  <tr class="col-sm-6" style="padding: 0;">
+  <tr class="col-sm-6 col-xs-12" style="padding: 0;">
   <td class="carousel-wrapper">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000000">
       <!-- インジケータの設定 -->
@@ -17,7 +17,7 @@
       <!-- スライドさせる画像の設定 -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag @post.giftpict1.to_s, class:"d-block w-100" %>
+          <%= image_tag @post.giftpict1.to_s, class:"d-block w-100 " %>
         </div><!-- /.carousel-item -->
         <div class="carousel-item">
           <% if @post.giftpict2.file.nil? %>
@@ -48,7 +48,7 @@
   </tr>
 
   <!--投稿内容-->
-  <tr class="col-sm-5" style="padding: 0; height:400px;">
+  <tr class="col-sm-5 col-xs-12 carousel-user-content" style="padding: 0; height:400px;">
   <td class="carousel-content">
     <div class="carousel-username">
       <% if @user.icon.file.nil? %>
