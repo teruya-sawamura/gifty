@@ -5,9 +5,12 @@
     color: #565656;
     max-width: 100%;
     max-height: 100%;
-    padding-top: 70px;
     padding-bottom: 70px;
 }
+
+
+
+
 
 
 
@@ -25,13 +28,10 @@
     }
 }
 
-
 .mb-0{
     border-bottom-style: solid;
     border-color: #DBDBDB;
     border-bottom-width: 1px;
-    /*margin:0;*/
-    /*padding:0 10% 0 10%;*/
     background-color: #ffffff;
 }
 
@@ -67,6 +67,11 @@
 }
 
 
+
+
+
+
+
 /*_post_btn*/
 
 .post-btn {
@@ -82,9 +87,9 @@
 }
 
 .post-btn img {
-    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    width:  120px;       /* ※縦横を同値に */
-    height: 120px;       /* ※縦横を同値に */
+    border-radius: 50%;
+    width:  120px;
+    height: 120px;
 }
 
 @media (max-width: 735px){
@@ -103,59 +108,307 @@
 }
 
 
+
+
+
+
+
 /*トップページ*/
+
+.top-page {
+   height: 650px;
+}
 
 .no-gutters {
     margin:0;
     padding:0;
 }
- 
-.no-gutters > .col,
-.no-gutters > [class*="col-"] {
-    margin:0;
-    padding:0;
+
+.top-gifty {
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-family: "Candara";
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
 }
 
-.img-fluid {
+.top-gifty{
+    margin-bottom: 0;
+}
+
+.top-btn {
+    float: right;
+}
+
+.top-list {
+    font-size: 15px;
+}
+
+.top-image{
     width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-image: url("/assets/gift-top.png");
+    background-repeat: no-repeat;
+    top: 60px;
+    opacity: 0.8;
 }
 
-.container-fluid {
-    position: relative;
+.top-img-comment {
+    height: 300px;
+    width: 350px;
+    background: rgba(195,195,195, 0.9);
+    vertical-align: middle;
+    float: right;
+    margin: 10% 0;
+    padding: 6.5% 5%;
 }
 
-.container-fluid h1 {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    font-size: 500%;
+@media (max-width: 768px){
+        .top-img-comment {
+        height: 250px;
+        width: 320px;
+        background: rgba(195,195,195, 0.9);
+        vertical-align: middle;
+        float: left;
+        margin: 10% 0;
+        padding: 6.5% 5%;
+    }
 }
 
-.container-fluid p {
-    position: absolute;
-    top: 55%;
-    left: 80%;
+.top-img-comment h2 {
+    font-family: "Candara";
+    z-index: 2001;
+    color: black;
+    font-size: 80px;
 }
+
+.top-img-comment p {
+    font-family: "Yu Gothic";
+    z-index: 2001;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.app-introduction {
+    font-family: "Yu Gothic";
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+
+
+.introduction-top1 {
+    font-size: 40px;
+    border-width: 0 0 0 20px;
+    border-color: #565656;
+    border-style: solid;
+    padding-left: 40px;
+    margin: 100px 0;
+}
+
+.introduction-top1 span, .introduction-top2 span{
+    font-family:'Candara'; 
+    font-size:45px;
+}
+
+.catch1 {
+    display: flex;
+    align-items: center;
+}
+.catch1:after {
+    border-top: 1px solid;
+    content: "";
+    width: 45%;
+}
+
+.catch1:after {
+    margin-left: 1em;
+}
+
+
+.introduction-top2 {
+    font-size: 40px;
+    border-width: 0 20px 0 0;
+    border-color: #565656;
+    border-style: solid;
+    margin: 70px 0px;
+    text-align: right;
+}
+
+.catch2 {
+    display: flex;
+    align-items: center;
+}
+.catch2:before {
+    border-top: 1px solid;
+    content: "";
+    width: 50%;
+}
+.catch2:before {
+    margin-right: 1em;
+}
+
+.app-img-left , .app-img-right{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+ 
+.introduction-txt {
+    padding: 20px 40px;
+}
+
+.introduction-txt h5 {
+    font-size: 30px;
+    text-decoration: underline dotted;
+    text-underline-position: under;
+}
+
+.introduction-txt p {
+    font-size: 15px;
+    margin: 30px 0;
+}
+
+.signup-content {
+    margin:200px auto 0 auto;
+    padding-top: 5%;
+    height: 200px;
+    max-width: 800px;
+    background-image: url("/assets/grade.jpg");
+}
+
+.recommend-signup p {
+    text-align:center;
+}
+
+@media (max-width: 455px){
+    .top-image{
+        width: 100%;
+        height: 600px;
+        background-size: cover;
+        background-image: url("/assets/giht-top2.png");
+        background-repeat: no-repeat;
+        top: 40px;
+        opacity: 0.7;
+    }
+    
+    .top-img-comment {
+        height: 160px;
+        width: 100%;
+        background: rgba(195,195,195, 0.8);
+        vertical-align: middle;
+        margin: 30% 0;
+        padding: 6.5% 5%;
+        text-align: center;
+    }
+    
+    .top-img-comment h2 {
+        font-family: "Candara";
+        z-index: 2001;
+        color: black;
+        font-size: 60px;
+    }
+    
+    .top-img-comment p {
+        font-family: "Yu Gothic";
+        z-index: 2001;
+        color: black;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .introduction-top1 {
+        font-size: 15px;
+        border-width: 0 0 0 10px;
+        border-color: #565656;
+        border-style: solid;
+        padding-left: 20px;
+        margin: 50px 0;
+    }
+    
+    .introduction-top1 span {
+        font-size:18px;
+    }
+    
+    .introduction-top2 {
+        font-size: 15px;
+        border-width: 0 10px 0 0;
+        border-color: #565656;
+        border-style: solid;
+        margin: 50px 0;
+    }
+    
+    .introduction-top2 span {
+        font-size:18px;
+    }
+    
+    .app-introduction img {
+        height: 130px;
+        width: 130px;
+        object-fit: cover;
+        padding: 5px;
+    }
+
+    .introduction-txt {
+        padding: 10px ;
+    }
+    
+    .introduction-txt h5 {
+        font-size: 12px;
+        text-decoration: underline dotted;
+        text-underline-position: under;
+    }
+    
+    .introduction-txt p {
+        font-size: 11px;
+        margin: 5px auto;
+    }
+    
+    .signup-content {
+        margin-top: 100px;
+        padding-top: 40px;
+        font-size: 12px;
+    }
+    
+    .recommend-signup {
+        margin:0px auto 0 auto;
+        max-width: 700px;
+    }
+    
+    .recommend-signup a {
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+
 
 
 /*投稿一覧*/
 
-.row-index {
-    /*min-width: 585px;*/
-/*    margin: 0 auto;*/
-/*    max-width: 935px;*/
-}
-
 .index-title {
-    /*margin: 10px auto;*/
-    /*width: 935px;*/
     font-size: 30px;
 }
 
-/*.index-title form {*/
-/*    display: inline;*/
-/*    float: space-around;*/
-/*}*/
+.container-toppage {
+    margin-top: 100px;
+}
+
+@media (max-width: 735px){
+    .container-toppage {
+        margin-top: 50px;
+    }
+}
+
+
+
 
 
 
@@ -184,6 +437,11 @@
 }
 
 
+
+
+
+
+
 /*プロフィール編集*/
 
 .edit-body {
@@ -192,8 +450,15 @@
     border-width: 1px;
     max-width: 700px;
     background-color: #ffffff;
-    margin: 3% auto;
+    margin: 100px auto;
     padding: 30px 30px 60px 30px;
+}
+
+@media (max-width: 735px){
+    .edit-body {
+    margin-top: 30px;
+    padding: 30px 0px 80px 0px;
+    }
 }
 
 .edit-title {
@@ -219,9 +484,15 @@
 }
 
 
+
+
+
+
+
 /*パスワード変更*/
+
 .edit-pass-form {
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0px auto;
 }
 
 .edit-pass-title {
@@ -232,11 +503,25 @@
 }
 
 
+
+
+
+
+
 /*user#show___プロフィール*/
+
+.container-mypage {
+    margin-top: 100px;
+}
+
+@media (max-width: 735px){
+    .container-mypage {
+        margin-top: 80px;
+    }
+}
 
 .profile-container{
     max-width: 750px;
-    /*min-width: 550px;*/
     margin: 50px auto;
     justify-content: center;
     padding-left: 30px;
@@ -271,7 +556,6 @@
 }
 
 .user-content {
-    /*min-width: 400px;*/
     margin: 20px auto;
     text-align: left;
     max-width: 600px;
@@ -308,44 +592,9 @@
     }
 }
 
-/*.user-content span {*/
-    /*float: right;*/
-
 .user-content a {
     font-size: 10px;
 }
-
-/*@media (max-width: 735px){*/
-/*    .user-edit-icon {*/
-    /*font-size: 20px;*/
-/*    margin-top: 10px;*/
-/*    }*/
-/*}*/
-
-/*.user-content a {*/
-/*    text-align: right;    */
-/*    font-size: 30px;*/
-/*    color: #565656;*/
-/*    margin-left: 5px;*/
-/*}*/
-
-/*.user-edit-icon a {*/
-/*    text-align: right;    */
-/*    font-size: 30px;*/
-/*    color: #565656;*/
-/*    margin-left: 5px;*/
-/*}*/
-
-/*.user-edit-icon {*/
-/*    transition: all 0.6s ease 0s;*/
-/*    border-radius: 50%;*/
-/*}*/
-
-/*.user-edit-icon svg:hover {*/
-/*    cursor: pointer;*/
-/*    transform: scale(1.1, 1.1);*/
-/*}*/
-
 
 .user-content p {
     padding: 10px 0;
@@ -358,13 +607,16 @@
 }
 
 
+
+
+
+
+
 /*user#show___投稿一覧*/
 
 .posts-container {
     display: block;
     margin: 0 auto 0 auto;
-    /*width: 985px;*/
-    /*min-width: 590px;*/
     text-align: center;
 }
 
@@ -400,8 +652,6 @@
     text-align: center;
 }
 
-
-
 .mypage-active {
     display: inline-block;
     width: 230px;
@@ -435,8 +685,6 @@
     }
 }
 
-
-
 .mypage-noactive a {
     color: #a8a8a8;
     text-decoration: none;
@@ -449,6 +697,11 @@
 .posts {
     text-align: left;
 }
+
+
+
+
+
 
 
 /*_post_パーシャル*/
@@ -489,7 +742,6 @@
     }
 }
 
-
 .gift-thumbnail img {
     width: 175px;
     height: 175px;
@@ -529,7 +781,7 @@
 .gift-thumbnail .caption {
     font-size: 130%;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 40%;
     color: #fafafa;
 }
 
@@ -554,13 +806,8 @@
 }
 
 .post-content {
-    /*display: inline-block;*/
     height: 0px;
-    /*width: 150px;*/
-    /*margin: 20px 20px;*/
-    /*font-size: 15px;*/
 }
-
 
 .active {
     background-color: #a8a8a8;
@@ -568,26 +815,28 @@
 
 .pagination a {
     color: #565656;
-    
-    /*background-color: #a8a8a8;*/
 }
 
 .pagepage {
     margin: 0 auto;
 }
 
+
+
+
+
+
+
+
 /*いいね/いいね解除ボタン*/
 
-
 .fav-btn {
-    /*float: right;*/
     position: absolute;
     top: 4px;
     left: 4px;
     background-color: #ffffff;
     border-radius: 80%;
 }
-
 
 .fav-btn:hover {
     background-color: #d8d8d8 ;
@@ -602,6 +851,11 @@
 }
 
 
+
+
+
+
+
 /*新規GIFT*/
 
 .giftpost-body {
@@ -610,8 +864,20 @@
     border-width: 1px;
     max-width: 700px;
     background-color: #ffffff;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
     padding: 30px 30px 60px 30px;
+}
+
+@media (max-width: 735px){
+    .giftpost-body {
+    margin-top: 30px;
+    }
+}
+
+@media (max-width: 374px){
+    .giftpost-body {
+    padding: 30px 0px 20px 0px;
+    }
 }
 
 .giftpost-title {
@@ -627,7 +893,26 @@
 }
 
 
+
+
+
+
+
 /*投稿詳細*/
+
+.container-postpage {
+   padding: 0; 
+   margin-top: 100px;
+}
+
+@media (max-width: 735px){
+    .container-postpage {
+       padding: 0; 
+       margin-top: 70px;
+    }
+}
+
+
 
 .carousel-inner {
     height: 400px;
@@ -636,30 +921,10 @@
 }
 
 .carousel-item img {
-    /*position: relative;*/
     height: 400px;
     width: 400px;
     object-fit: cover;
 }
-
-/*@media (min-width: 0px){*/
-/*    .carousel-inner {*/
-/*    width: 400px;*/
-/*    height: 400px;*/
-/*    }*/
-    
-/*    .carousel-item img {*/
-/*    width: 400px;*/
-/*    height: 400px;*/
-/*    }*/
-    
-/*    .slider {*/
-/*    width: 400px;*/
-/*    height: 400px;*/
-/*    }*/
-/*}*/
-    
-
 
 @media (max-width: 420px){
     .carousel-inner {
@@ -726,16 +991,6 @@
     max-width: 295px;
     }
 }
-/*.carousel-item img > .carousel-control-prev {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*}*/
-
-/*.carousel-control-next {*/
-/*    right: 400px;*/
-/*    position: absolute;*/
-/*}*/
 
 .slider {
     /*position: absolute;*/
@@ -765,7 +1020,6 @@
     }
 }
     
-
 .carousel-container tr {
     display: inline-table;
     text-align: left;
@@ -784,17 +1038,6 @@
     background-color: #ffffff;
     position: relative;
 }
-
-
-/*.carousel-content-tr{*/
-/*    padding: 0;*/
-/*}*/
-
-/*@media (max-width: 576px){*/
-/*    .carousel-user-content {*/
-/*    max-height: 0;*/
-/*    }*/
-/*}*/
 
 .carousel-username {
     border-bottom-style: solid;
@@ -828,15 +1071,11 @@
 }
 
 .carousel-post span {
-    /*font-size: 15px;*/
     font-weight: 600;
     font-family: "Meiryo UI";
 }
 
 .fav-btn2 {
-    /*position: absolute;*/
-    /*top: 148px;*/
-    /*left: 145px;*/
     background-color: #ffffff;
     font-size: 25px;
     transition: all 0.6s ease 0s;

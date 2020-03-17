@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
   
   def search
-    @posts = Post.search(params[:search]).order(id: :desc).page(params[:page]).per(18)
+    @posts = Post.search(params[:search]).order(id: :desc).page(params[:page]).per(24)
   end
   
 end
