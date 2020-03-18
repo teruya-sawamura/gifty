@@ -1,0 +1,17 @@
+find_executable: checking for brew... -------------------- no
+
+--------------------
+
+find_executable: checking for pacman... -------------------- no
+
+--------------------
+
+find_executable: checking for gcc... -------------------- yes
+
+--------------------
+
+find_executable: checking for pkg-config... -------------------- yes
+
+--------------------
+
+ERROR: Can't install RMagick 4.0.0. Can't find ImageMagick with pkg-config

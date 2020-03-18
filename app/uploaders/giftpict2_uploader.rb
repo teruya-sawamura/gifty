@@ -44,4 +44,11 @@ class Giftpict2Uploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
+  
 end

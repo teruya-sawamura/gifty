@@ -5,7 +5,6 @@
     color: #565656;
     max-width: 100%;
     max-height: 100%;
-    padding-bottom: 70px;
 }
 
 
@@ -285,6 +284,14 @@
     text-align:center;
 }
 
+footer {
+    color: #fafafa;
+    background-color: #565656;
+    margin-top: 150px;
+    padding: 20px;
+    text-align: center;
+}
+
 @media (max-width: 455px){
     .top-image{
         width: 100%;
@@ -382,6 +389,10 @@
     .recommend-signup a {
         font-size: 10px;
     }
+    
+    footer {
+        font-size: 10px;
+    }
 }
 
 
@@ -399,6 +410,7 @@
 
 .container-toppage {
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 735px){
@@ -512,6 +524,7 @@
 
 .container-mypage {
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 735px){
