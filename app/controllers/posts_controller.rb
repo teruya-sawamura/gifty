@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   
   before_action :require_user_logged_in
   
+  before_action :correct_post, only: [:edit, :update, :destroy]
+  
   def show
     @post = Post.find(params[:id])
     @user = User.find_by(id: @post.user_id)
@@ -55,3 +57,9 @@ end
       params.require(:post).permit(:giftwhat, :giftwho, :giftwhen, :givetake, :giftpict1, :giftpict2, :giftpict3, :giftcomment)
     end
     
+    def correct_post
+      @post = current_user.posts.find_by(id: params[:id])
+      unless @post
+        redirect_to root_path
+      end
+    end

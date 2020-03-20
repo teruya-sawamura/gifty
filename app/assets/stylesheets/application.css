@@ -12,6 +12,17 @@
 
 
 
+/*エラーメッセージ*/
+
+.alert {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
 
 /*ナビバー*/
 
@@ -848,7 +859,7 @@ footer {
     top: 4px;
     left: 4px;
     background-color: #ffffff;
-    border-radius: 80%;
+    border-radius: 50%;
 }
 
 .fav-btn:hover {
@@ -924,8 +935,6 @@ footer {
        margin-top: 70px;
     }
 }
-
-
 
 .carousel-inner {
     height: 400px;
@@ -1006,7 +1015,6 @@ footer {
 }
 
 .slider {
-    /*position: absolute;*/
     height: 400px;
     width: 400px;
     margin: 0 auto;
