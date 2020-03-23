@@ -6,11 +6,11 @@ class Post < ApplicationRecord
   
   belongs_to :user
   
-  validates :giftwhat, presence: true, length: { maximum:50 }
+  validates :giftwhat, presence: true, length: { maximum:20 }
   validates :giftwho, presence: true, length: { maximum:50 }
   validates :giftwhen, presence: true, length: { maximum:50 }
   validates :givetake,  presence: true, length: { maximum:50 }
-  validates :giftcomment, length: { maximum:255 }
+  validates :giftcomment, length: { maximum:100 }
   validates :giftpict1, presence: true
   
 

@@ -622,6 +622,8 @@ footer {
 
 .user-content p {
     padding: 10px 0;
+    max-width: 600px;
+    word-break: break-word;
 }
 
 @media (max-width: 735px){
