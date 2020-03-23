@@ -1,6 +1,7 @@
 <div class="enter-body" style="margin-top: 100px;">
   <h3 class="enter-title">GIFTY!</h3>
     <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
         <%= f.text_field :name, class: 'form-control', placeholder: 'アカウント名' %>
       </div>

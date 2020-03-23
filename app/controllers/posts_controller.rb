@@ -19,7 +19,7 @@ class PostsController < ApplicationController
       redirect_to @post.user
     else
       flash[:danger] = "GIFTの投稿に失敗しました。"
-      render :edit
+      render :new
     end
   end
   
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash[:danger] = "GIFTの編集に失敗しました。"
-      render :show
+      render :edit
     end
   end
   
