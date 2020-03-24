@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "ユーザー登録しました。"
       redirect_to @user
     else
       flash[:danger] = "ユーザ登録に失敗しました。"
@@ -29,9 +30,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      flash[:success] = 'プロフィールを変更しました。'
       redirect_to @user
     else
-      flash[:danger] = "プロフィールの変更に失敗しました。"
+      flash.now[:danger] = "プロフィールの変更に失敗しました。"
       render :edit
     end
   end
@@ -47,11 +49,11 @@ class UsersController < ApplicationController
   
   def update_pass
     if @user.update(user_params)
-      flash[:success] = 'プロフィールを変更しました。'
+      flash[:success] = 'パスワードを変更しました。'
       redirect_to @user
     else
-      flash[:danger] = "プロフィールの変更に失敗しました。"
-      render :edit
+      flash.now[:danger] = "パスワードの変更に失敗しました。"
+      render :edit_pass
     end
   end
 end

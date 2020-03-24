@@ -1,7 +1,7 @@
 <div class="edit-body">
   <h3 class="edit-title">プロフィール編集</h3>
   <div class="edit-form">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%= form_with(model: @user, local: true, method: :put) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group form-inline">
         <%= f.label :name, 'アカウント名', class: "col-sm-4 control-label" %>

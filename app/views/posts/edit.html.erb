@@ -1,7 +1,7 @@
 <div class="giftpost-body">
   <h3 class="giftpost-title">GIFT編集</h3>
   <div class="giftpost-form">
-    <%= form_with(model: @post, local: true) do |f| %>
+    <%= form_with(model: @post, local: true, method: :put) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group form-inline">
         <%= f.label :giftwhat, 'なにを', class: "col-sm-4 control-label" %>

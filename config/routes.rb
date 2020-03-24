@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     member do
       get :likes
       get :edit_pass
+      put :update_pass
+      patch :update_pass
     end
   end
   

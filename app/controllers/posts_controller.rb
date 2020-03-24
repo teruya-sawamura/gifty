@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      flash[:success] = "GIFTを投稿しました。"
       redirect_to @post.user
     else
       flash[:danger] = "GIFTの投稿に失敗しました。"
@@ -30,9 +31,10 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
+      flash[:success] = "GIFTを編集しました。"
       redirect_to @post
     else
-      flash[:danger] = "GIFTの編集に失敗しました。"
+      flash.now[:danger] = "GIFTの編集に失敗しました。"
       render :edit
     end
   end

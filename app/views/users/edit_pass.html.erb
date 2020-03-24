@@ -4,7 +4,7 @@
 <div class="row row-0">
   <div class="edit-pass-title">パスワード変更</div>
   <div class="edit-pass-form">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%= form_with(url: update_pass_user_path, model: @user, local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
           
           <div class="form-group">

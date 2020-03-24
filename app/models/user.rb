@@ -7,7 +7,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :sex, length: { maximum: 10 }
   validates :introduction, length: { maximum:150 }
-  
+
   has_secure_password
   
   # 1:N = user : post
