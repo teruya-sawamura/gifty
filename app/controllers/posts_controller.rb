@@ -19,7 +19,7 @@ class PostsController < ApplicationController
       flash[:success] = "GIFTを投稿しました。"
       redirect_to @post.user
     else
-      flash[:danger] = "GIFTの投稿に失敗しました。"
+      flash.now[:danger] = "GIFTの投稿に失敗しました。"
       render :new
     end
   end

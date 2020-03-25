@@ -11,27 +11,27 @@
       <!-- インジケータの設定 -->
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <% unless @post.giftpict2.file.nil? %>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <% end %>
+        <% unless @post.giftpict3.file.nil? %>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <% end %>
       </ol>
       <!-- スライドさせる画像の設定 -->
       <div class="carousel-inner">
         <div class="carousel-item active">
           <%= image_tag @post.giftpict1.to_s, class:"d-block w-100 " %>
         </div><!-- /.carousel-item -->
+        <% unless @post.giftpict2.file.nil? %>
         <div class="carousel-item">
-          <% if @post.giftpict2.file.nil? %>
-            <%= image_tag 'default_giftpict.png' %>
-          <% else %>
-            <%= image_tag @post.giftpict2.to_s, class:"d-block w-100" %>
-          <% end %>
+          <%= image_tag @post.giftpict2.to_s, class:"d-block w-100" %>
+        <% end %>
         </div><!-- /.carousel-item -->
+        <% unless @post.giftpict3.file.nil? %>
         <div class="carousel-item">
-          <% if @post.giftpict3.file.nil? %>
-            <%= image_tag 'default_giftpict.png' %>
-          <% else %>
-            <%= image_tag @post.giftpict3.to_s, class:"d-block w-100" %>
-          <% end %>
+          <%= image_tag @post.giftpict3.to_s, class:"d-block w-100" %>
+        <% end %>
         </div><!-- /.carousel-item -->
          <!-- スライドコントロールの設定 -->
         <div class="slider">
