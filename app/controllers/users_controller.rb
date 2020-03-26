@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :require_user_logged_in, only:[:show, :edit, :update, :likes, :edit_pass, :update_pass]
-  
+  before_action :require_user_unlogged_in, only:[:new, :create]
   before_action :correct_user, only: [:edit, :update, :likes, :edit_pass, :update_pass]
   
   def show
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    Rails.logger.info(user_params)
     if @user.update(user_params)
       flash[:success] = 'プロフィールを変更しました。'
       redirect_to @user
@@ -48,7 +49,10 @@ class UsersController < ApplicationController
   end
   
   def update_pass
-    if @user.update(user_params)
+    if params[:user][:password].blank?
+      flash.now[:warning] = "入力されていないフォームがあります。"
+      render :edit_pass
+    elsif @user.update(user_params)
       flash[:success] = 'パスワードを変更しました。'
       redirect_to @user
     else

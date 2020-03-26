@@ -1,7 +1,10 @@
 class SessionController < ApplicationController
+  
+  before_action :require_user_unlogged_in, only:[:new, :create]
+
   def new
   end
-
+  
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
@@ -12,7 +15,7 @@ class SessionController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
     session[:user_id] = nil
     redirect_to root_url
@@ -34,3 +37,4 @@ class SessionController < ApplicationController
   end
 
 end
+
