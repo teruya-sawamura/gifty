@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
-  before_action :require_user_logged_in, only:[:show, :edit, :update, :likes, :edit_pass, :update_pass]
+  before_action :require_user_logged_in, only:[:show, :edit, :update, :destroy, :likes, :edit_pass, :update_pass]
   before_action :require_user_unlogged_in, only:[:new, :create]
-  before_action :correct_user, only: [:edit, :update, :edit_pass, :update_pass]
+  before_action :correct_user, only: [:edit, :update, :destroy, :edit_pass, :update_pass]
   
   def show
     @user = User.find(params[:id])
@@ -38,6 +38,15 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:danger] = "退会しました。"
+      redirect_to root_url
+    end
+  end
+  
   
   def likes
     @user = User.find(params[:id])

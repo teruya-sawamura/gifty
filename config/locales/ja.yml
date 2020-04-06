@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      post: 投稿
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        icon: アイコン画像
+        sex: 性別
+        introduction: 自己紹介文
+      post:  
+        giftwhat: なにを
+        giftwho: だれに/だれから
+        giftwhen: いつ
+        givetake: あげた/もらった
+        giftcomment: 説明文
+        giftpict1: 画像１
+        giftpict2: 画像２
+        giftpict3: 画像３
+        

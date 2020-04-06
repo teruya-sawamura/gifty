@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_secure_password
   
   # 1:N = user : post
-  has_many :posts
+  has_many :posts, dependent: :destroy
   
   # 1:N = user : favorite
   has_many :favorites

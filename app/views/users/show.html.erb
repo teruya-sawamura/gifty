@@ -13,17 +13,19 @@
       </div>
       
       <div class="user-content col-xs-10">
-          <h2><%= @user.name %>&nbsp;&nbsp;</h2>
+        <div>
+          <h2><%= @user.name %>&nbsp;&nbsp;&nbsp;</h2>
           <% if @user.sex == "male" %>
-            <i class="fas fa-male fa-lg"></i>&nbsp;&nbsp;
+            <i class="fas fa-male fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <% elsif @user.sex == "female" %>
-            <i class="fas fa-female fa-lg"></i>&nbsp;&nbsp;
+            <i class="fas fa-female fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <% else %>
-            <span data-toggle="tooltip" data-placement="top" title="性別が選択されていません"><i class="fas fa-question fa-lg" ></i></span>&nbsp;&nbsp;
+            <span data-toggle="tooltip" data-placement="top" title="性別が選択されていません"><i class="fas fa-question fa-lg" ></i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <% end %>
               <% if current_user == @user %>
-                <%= link_to "プロフィール編集", edit_user_path, class: 'btn btn-outline-secondary btn-sm' %>
+                <span class="profile-edit-btn"><%= link_to "プロフィール編集", edit_user_path, class: 'btn btn-outline-secondary btn-sm align-text-top' %></span>
               <% end %>
+        </div>
         <div class="user-introduction">
           <p><%= @user.introduction %></p>
         </div>

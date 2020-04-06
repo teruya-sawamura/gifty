@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   
   # ユーザ登録用ルーティング
   get 'signup', to: 'users#new'
-  resources :users, only:[:show, :create, :edit, :update,] do
+  delete 'signout', to: 'user#destroy'
+  resources :users, only:[:show, :create, :edit, :update, :destroy] do
     member do
       get :likes
       get :edit_pass

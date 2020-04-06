@@ -25,6 +25,7 @@
       </div>
       <%= f.submit '変更する', class: 'edit-btn btn btn-primary' %>
     <% end %>
+    <%= link_to "退会する", @user, method: :delete, data: { confirm: "退会しますか?（プロフィール・投稿データはすべて削除されます。）" }, class:"signout-btn btn btn-danger" %>
     <p><%= link_to  'パスワードを変更する方はこちら',   edit_pass_user_path(@user) %></p>
   </div>
 </div>

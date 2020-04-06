@@ -19,6 +19,10 @@
     margin-bottom: 0px;
 }
 
+#error_explanation {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -506,6 +510,11 @@ footer {
     float: right;
 }
 
+.signout-btn {
+    margin-left: 30px;
+    float: left;
+}
+
 
 
 
@@ -542,6 +551,10 @@ footer {
     .container-mypage {
         margin-top: 80px;
     }
+}
+
+.media {
+    flex: auto;
 }
 
 .profile-container{
@@ -632,7 +645,9 @@ footer {
     }
 }
 
-
+.profile-edit-btn {
+    align-self: flex-start;
+}
 
 
 
