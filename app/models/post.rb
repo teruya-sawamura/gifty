@@ -18,34 +18,14 @@ class Post < ApplicationRecord
   has_many :reverses_of_favorites, class_name: 'Favorite', foreign_key: 'post_id'
   has_many :liked, through: :reverses_of_favorites, source: :user, dependent: :destroy
 
-# def search
-#     keywords = params[:keyword].split(/[[:blank:]]+/).select(&:present?)
-#     negative_keywords, positive_keywords =
-#     keywords.partition {|keyword| keyword.start_with?("-") }
-
-#     @posts = Post
-
-#     positive_keywords.each do |keyword|
-#       @posts = @posts.where("giftwho LIKE ?", "%#{keyword}%")
-#     end
-
-#     negative_keywords.each {|word| word.slice!(/^-/) }
-
-#     negative_keywords.each do |keyword|
-#       next if keyword.blank?
-#       @posts = @posts.where.not("giftwho LIKE ?", "%#{keyword}%")
-#     end
-# end
-
-
-
-
   def self.search(search)
-    if search
-      Post.where(['giftwhat LIKE ? OR giftwhen LIKE ? OR giftwho LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
-    else
-      Post.all
+    keywords = search.split(/[[:blank:]]+/).select(&:present?)
+    posts = Post
+
+    keywords.each do |keyword|
+      posts = posts.where(['giftwhat LIKE ? OR giftwhen LIKE ? OR giftwho LIKE ?', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
     end
+    return posts
   end
 
 
