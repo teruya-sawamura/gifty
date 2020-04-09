@@ -7,7 +7,7 @@
           <div class="caption">
             <!--<P><%#= link_to  post.user.name, user_path(post.user) %></P>-->
             <P>by  <%= post.user.name %></p>
-            <% if post.givetake == "あげた" %>
+            <% if post.givetake == "あげました" %>
               <P class="post-content">for <%= post.giftwho %></P>
             <% else %>
               <p class="post-content">from <%= post.giftwho %></p>
